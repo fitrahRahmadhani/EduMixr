@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_matakuliah_form" model="ir.ui.view">
+        <field name="name">edumixr.matakuliah.form</field>
+        <field name="model">edumixr.matakuliah</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="ref" />
+                        <field name="matakuliah" />
+                        <field name="sks" />
+                        <field name="pengampu_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_matakuliah_tree" model="ir.ui.view">
+        <field name="name">edumixr.matakuliah.tree</field>
+        <field name="model">edumixr.matakuliah</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref" />
+                <field name="matakuliah" />
+                <field name="sks" />
+                <field name="pengampu_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_edumixr_matakuliah" model="ir.actions.act_window">
+        <field name="name">Manajemen matakuliah</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">edumixr.matakuliah</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_edumixr_matakuliah_child"
+        name="Manajemen Matakuliah"
+        parent="menu_edumixr_matakuliah"
+        action="action_edumixr_matakuliah"
+        sequence="10" />
+
+</odoo>

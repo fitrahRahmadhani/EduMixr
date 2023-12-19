@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="action_manage_mahasiswa" model="ir.actions.act_window">
+        <field name="name">Manage Mahasiswa</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">manage.mahasiswa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_menu_mahasiswa_clustering" model="ir.actions.server">
+        <field name="name">Run Clustering</field>
+        <field name="model_id" ref="model_manage_mahasiswa" />
+        <field name="state">code</field>
+        <field name="code">
+            model.run_clustering();
+        </field>
+    </record>
+
+    <record id="action_menu_mahasiswa_distribute" model="ir.actions.server">
+        <field name="name">Distribute Mahasiswa</field>
+        <field name="model_id" ref="model_manage_mahasiswa" />
+        <field name="state">code</field>
+        <field name="code">
+            model.distribute_students();
+        </field>
+    </record>
+
+    <!-- mahasiswa.manage_mahasiswa form view -->
+    <record id="mahasiswa_form" model="ir.ui.view">
+        <field name="name">mahasiswa.mahasiswa.form</field>
+        <field name="model">manage.mahasiswa</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="ref" />
+                        <field name="average" />
+                        <field name="cluster" />
+                        <field name="semester" />
+                    </group>
+                </sheet>
+                <sheet>
+                    <group>
+                        <field name="pancasila" />
+                        <field name="teknikDokumentasi" />
+                        <field name="ilmuKomunikasidanOrganisasi" />
+                        <field name="aplikasiKomputerPerkantoran" />
+                        <field name="bahasaInggris" />
+                        <field name="konsepTeknologiInformasi" />
+                        <field name="matematikaDiskrit" />
+                        <field name="keselamatandanKesehatanKerja" />
+                        <field name="dasarPemrograman" />
+                        <field name="praktikumDasarPemrograman" />
+                        <field name="agama" />
+                        <field name="kewarganegaraan" />
+                        <field name="penulisanIlmiah" />
+                        <field name="sistemOperasi" />
+                        <field name="pengembanganPerangkatLunakBerbasisObjek" />
+                        <field name="desaindanPemrogramanWeb" />
+                        <field name="basisData" />
+                        <field name="praktikumBasisData" />
+                        <field name="strukturData" />
+                        <field name="praktikumStrukturData" />
+                        <field name="interaksiManusiaKomputer" />
+                        <field name="analisisdanPerancanganSistemInformasi" />
+                        <field name="basisDataLanjut" />
+                        <field name="praktikumBasisDataLanjut" />
+                        <field name="pemrogramanBerbasisObjek" />
+                        <field name="praktikumPemrogramanBerbasisObjek" />
+                        <field name="statistika" />
+                        <field name="jaringanKomputer" />
+                        <field name="praktikumJaringanKomputer" />
+                        <field name="manajemenProyekSistemInformasi" />
+                        <field name="analisisProsesBisnis" />
+                        <field name="pengenalanSistemInformasi" />
+                        <field name="rekayasaPerangkatLunak" />
+                        <field name="eBusiness" />
+                        <field name="dataWarhouse" />
+                        <field name="workshop1" />
+                        <field name="pengantarAkuntasiManajemendanBisnis" />
+                    </group>
+                </sheet>
+
+            </form>
+
+        </field>
+    </record>
+
+    <!-- mahasiswa.manage_mahasiswa tree view -->
+    <record id="mahasiswa_tree" model="ir.ui.view">
+        <field name="name">mahasiswa.mahasiswa.tree</field>
+        <field name="model">manage.mahasiswa</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="ref" />
+                <field name="average" />
+                <field name="cluster" />
+                <field name="semester" />
+                <field name="pancasila" />
+                <field name="teknikDokumentasi" />
+                <field name="ilmuKomunikasidanOrganisasi" />
+                <field name="aplikasiKomputerPerkantoran" />
+                <field name="bahasaInggris" />
+                <field name="konsepTeknologiInformasi" />
+                <field name="matematikaDiskrit" />
+                <field name="keselamatandanKesehatanKerja" />
+                <field name="dasarPemrograman" />
+                <field name="praktikumDasarPemrograman" />
+                <field name="agama" />
+                <field name="kewarganegaraan" />
+                <field name="penulisanIlmiah" />
+                <field name="sistemOperasi" />
+                <field name="pengembanganPerangkatLunakBerbasisObjek" />
+                <field name="desaindanPemrogramanWeb" />
+                <field name="basisData" />
+                <field name="praktikumBasisData" />
+                <field name="strukturData" />
+                <field name="praktikumStrukturData" />
+                <field name="interaksiManusiaKomputer" />
+                <field name="analisisdanPerancanganSistemInformasi" />
+                <field name="basisDataLanjut" />
+                <field name="praktikumBasisDataLanjut" />
+                <field name="pemrogramanBerbasisObjek" />
+                <field name="praktikumPemrogramanBerbasisObjek" />
+                <field name="statistika" />
+                <field name="jaringanKomputer" />
+                <field name="praktikumJaringanKomputer" />
+                <field name="manajemenProyekSistemInformasi" />
+                <field name="analisisProsesBisnis" />
+                <field name="pengenalanSistemInformasi" />
+                <field name="rekayasaPerangkatLunak" />
+                <field name="eBusiness" />
+                <field name="dataWarhouse" />
+                <field name="workshop1" />
+                <field name="pengantarAkuntasiManajemendanBisnis" />
+            </tree>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_edumixr_mahasiswa_child"
+        name="Manajemen Mahasiswa"
+        parent="menu_edumixr_mahasiswa"
+        action="action_manage_mahasiswa"
+        sequence="10" />
+
+    <menuitem
+        id="menu_edumixr_clustering_child"
+        name="Clustering"
+        parent="menu_edumixr_clustering"
+        action="action_menu_mahasiswa_clustering"
+        sequence="10" />
+    
+    <menuitem
+        id="menu_edumixr_distribute_child"
+        name="Distribute Mahasiswa"
+        parent="menu_edumixr_clustering"
+        action="action_menu_mahasiswa_distribute"
+        sequence="10" />
+
+    <menuitem
+        id="menu_edumixr_import_mahasiswa_child"
+        name="Import Mahasiswa"
+        parent="menu_edumixr_mahasiswa"
+        action="action_import_mahasiswa"
+        sequence="20" />
+
+
+</odoo>

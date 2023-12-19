@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_classroom_form" model="ir.ui.view">
+        <field name="name">edumixr.classroom.form</field>
+        <field name="model">edumixr.classroom</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name_class" />
+                        <field name="semester_class" />
+                        <field name="dpa_id" />
+                    </group>
+
+                    <notebook>
+                        <page string="Daftar Mahasiswa">
+                                <field name="daftar_mahasiswa_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="ref" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="ref" />
+                                        </group>
+                                    </form>
+                                </field>
+                        </page>
+                        <page string="Daftar Matakuliah">
+                            <field name="matakuliah_ids">
+                                <tree string="Daftar Matakuliah">
+                                    <field name="ref" />
+                                    <field name="matakuliah" />
+                                    <field name="sks" />
+                                    <field name="pengampu_id" />
+                                </tree>
+                                <form string="Daftar Matakuliah">
+                                    <group>
+                                        <field name="ref" />
+                                        <field name="matakuliah" />
+                                        <field name="sks" />
+                                        <field name="pengampu_id" />
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_classroom_tree" model="ir.ui.view">
+        <field name="name">edumixr.classroom.tree</field>
+        <field name="model">edumixr.classroom</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name_class" />
+                <field name="semester_class" />
+                <field name="dpa_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_edumixr_classroom" model="ir.actions.act_window">
+        <field name="name">Ruang Kelas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">edumixr.classroom</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_edumixr_ruangkelas_child"
+        name="Manajemen Ruang Kelas"
+        parent="menu_edumixr_ruangkelas"
+        action="action_edumixr_classroom"
+        sequence="10" />
+
+</odoo>

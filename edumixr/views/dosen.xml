@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_dosen_form" model="ir.ui.view">
+        <field name="name">edumixr.dosen.form</field>
+        <field name="model">edumixr.dosen</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="ref" />
+                        <field name="name" />
+                        <field name="nidn" />
+                        <field name="email" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dosen_tree" model="ir.ui.view">
+        <field name="name">edumixr.dosen.tree</field>
+        <field name="model">edumixr.dosen</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref" />
+                <field name="name" />
+                <field name="nidn" />
+                <field name="email" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_edumixr_dosen" model="ir.actions.act_window">
+        <field name="name">Manajemen Dosen</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">edumixr.dosen</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_edumixr_dosen_child"
+        name="Manajemen Dosen"
+        parent="menu_edumixr_dosen"
+        action="action_edumixr_dosen"
+        sequence="10" />
+
+</odoo>

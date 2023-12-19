@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="menu_edumixr_root"
+        web_icon="../static/logo/edumixr_logo.png"
+        name="EduMixr"
+        sequence="10"/>
+    
+    <menuitem
+        id="menu_edumixr_ruangkelas"
+        name="Ruang Kelas"
+        parent="menu_edumixr_root"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_edumixr_mahasiswa"
+        name="Mahasiswa"
+        parent="menu_edumixr_root"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_edumixr_clustering"
+        name="Clustering"
+        parent="menu_edumixr_root"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_edumixr_dosen"
+        name="Manajemen Dosen"
+        parent="menu_edumixr_root"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_edumixr_matakuliah"
+        name="Manajemen Matakuliah"
+        parent="menu_edumixr_root"
+        sequence="10"/>
+        
+
+</odoo>
